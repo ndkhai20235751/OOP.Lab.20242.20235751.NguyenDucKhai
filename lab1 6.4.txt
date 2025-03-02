@@ -1,0 +1,85 @@
+package hello.java;
+import java.util.Scanner;
+
+public class lab1 {
+	public static void main(String[] args) {
+	  String[][] month= {
+			  { "Jan.", "Jan", "Tháng Giêng","Tháng 1"},
+		      {  "Feb.", "Feb", "Tháng Hai", "Tháng 2" },
+		      {  "Mar.", "Mar", "Tháng Ba", "Tháng 3"},
+	           { "Apr.", "Apr", "Tháng Tư", "Tháng 4"},
+	           { "May", "May", "Tháng Năm", "Tháng 5"},
+	           { "Jun.", "Jun", "Tháng Sáu", "Tháng 6"},
+	           { "Jul.", "Jul", "Tháng Bảy", "Tháng 7"},
+	           { "Aug.", "Aug", "Tháng Tám", "Tháng 8"},
+	           { "Sep.", "Sep", "Tháng Chín", "Tháng 9"},
+	           { "Oct.", "Oct", "Tháng Mười", "Tháng 10"},
+	           {"Nov.", "Nov", "Tháng Mười Một", "Tháng 11"},
+	          {"Dec.", "Dec", "Tháng Mười Hai", "Tháng 12"}
+	  };
+		
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("Nhap nam:");
+	  int year=sc.nextInt();
+	  sc.nextLine();
+	  System.out.println("Nhap thang:");
+	  String month1=sc.nextLine();
+	 
+	  
+	  int[] nhuan= {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	  int[] bt= {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	   
+	  if(year<100) {
+		  System.out.println("Error year!");
+		  return;
+	  }
+	  else {
+		 
+			  int month2=20;
+			  
+				  if((year%4==0&&year%100!=0)||(year%400==0)) {
+					  for(int i=0;i<12;i++) {
+						  for(int j=0;j<4;j++) {
+							  if(month1.equalsIgnoreCase(month[i][j])==true) {
+								month2=i; 
+								  break;
+							  }
+						  }
+				 	 	  
+				     }
+					  if(month2==20) {
+						 System.out.print("Error month"); 
+					  }
+					  else {
+				         System.out.println("Ngay:" + nhuan[month2] +"Thang:" +(month2+1) + "Nam:" + year );
+			           }
+		   }
+				  else {
+					  for(int i=0;i<12;i++) {
+						  for(int j=0;j<4;j++) {
+							  if(month1.equalsIgnoreCase(month[i][j])==true) {
+								month2=i; 
+					            break;
+							  }
+						  }
+				 	 	  
+				     }
+					  if(month2==20) {
+							 System.out.print("Error month"); 
+						  }
+					  else {
+
+				     System.out.println("Ngay:" + bt[month2] +"Thang:" +(month2+1) + " Nam:" + year );
+				  
+		
+					  }
+				  }		  
+		  }
+		  
+		  
+	  
+	  
+	}
+}
+	
+
