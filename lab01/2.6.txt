@@ -1,0 +1,79 @@
+package hello.java;
+import java.util.Scanner;
+public class lab1 {
+	public static void main (String[] args) {
+        //ax+b=0
+		Scanner sc=new Scanner(System.in);
+       System.out.print("Nhap gia tri a.1: ");
+        int a_=sc.nextInt();
+       System.out.print("Nhap gia tri b: ");
+        int b_=sc.nextInt();
+        
+        
+        if(a_==0) {
+        	if(b_==0) {
+        		System.out.printf("Phuong trinh vo so nghiem");
+        	}
+        	else {
+        		System.out.printf("phuong trinh vo nghiem");
+        	}
+        }
+        else {
+        	System.out.printf("Phuong trinh co nghiem duy nhat:%.2f",(double)-b_/a_);
+        }
+        
+        System.out.print("\n\n");
+        //a1x+b1y=c1
+         // a2x+b2y=c2
+        System.out.print("Nhap gia tri a1: ");
+        int a1=sc.nextInt();
+        System.out.print("Nhap gia tri b1: ");
+        int b1=sc.nextInt();
+        System.out.print("Nhap gia tri c1: ");
+        int c1=sc.nextInt();
+        System.out.print("Nhap gia tri a2: ");
+        int a2=sc.nextInt();
+        System.out.print("Nhap gia tri b2: ");
+        int b2=sc.nextInt();
+        System.out.print("Nhap gia tri c2: ");
+        int c2=sc.nextInt();
+        
+        int D=a1*b2-a2*b1;
+        int Dx=c1*b2-c2*b1;
+        int Dy=a1*c2-a2*c1;
+        
+        if(D==0) {
+        	System.out.printf("he co nghiem duy nhat:\nx=%f\ny=%f",(double)Dx/D,(double)Dy/D);
+        }
+        else {
+        	if(Dx==0&&Dy==0) {
+        		System.out.printf("He phuong trinh vo so nghiem");
+        	}
+        	else if(Dx!=0||Dy!=0) {
+        		System.out.printf("he vo nghiem");
+        	}
+        }
+        System.out.print("\n\n");
+        //ax2+bx+c=0
+        System.out.print("Nhap gia tri a: ");
+        int a=sc.nextInt();
+        System.out.print("Nhap gia tri b: ");
+        int b=sc.nextInt();
+        System.out.print("Nhap gia tri c: ");
+        int c=sc.nextInt();
+        
+        int deta=b*b-4*a*c;
+        
+        if(deta<0) {
+        	System.out.printf("Phuong trinh vo nghiem");
+        }
+        else if(deta==0) {
+        	System.out.printf("phuong trinh co nghiem kep:%f",(double)-b/(2*a));
+        }
+        else {        	
+        	double x1=(-b+Math.sqrt(deta))/(2*a);
+        	double x2=(-b+Math.sqrt(deta))/(2*a);
+        	System.out.printf("Phuong trinh co 2 nghiem phan biet:\n%f\n%f",x1,x2);
+        }
+	}     
+}
